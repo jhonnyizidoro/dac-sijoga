@@ -1,0 +1,41 @@
+.lawsuit
+	background: $white
+	box-shadow: $shadow-1
+	margin-bottom: 40px
+	padding: 15px 15px 0
+	&__title
+		+font(1.6rem, $c: $muted)
+		margin-bottom: 10px
+	&__subtitle
+		font-size: 1.3rem
+	&__row
+		+flex($g: 1, $b: 0)
+		padding: 15px 0
+		&:not(:last-of-type)
+			border-bottom: 1px solid $light
+	&__text__muted,
+	&__link
+		color: $muted
+	&__link
+		cursor: pointer
+		display: inline-block
+		text-decoration: underline
+		&:not(:last-child)
+			border-right: 1px solid $light
+			margin-right: 5px
+			padding-right: 10px
+	&__block
+		margin-bottom: 15px
+		padding-bottom: 15px
+		&:not(:last-of-type)
+			border-bottom: 1px solid $light
+	&__justification
+		+font($c: $muted, $lh: 2)
+		background: $white
+		transform: translateY(-1px)
+	&__warning
+		+font(1.1rem, $font-3, $c: $white)
+		background: $danger
+		border-radius: 50%
+		margin-left: 5px
+		padding: 1px 9px

@@ -1,18 +1,45 @@
 .login
 	+position(50%, 50%)
-	+flex($d: column)
 	background: $white
 	box-shadow: $shadow-1
 	padding: 25px
 	transform: translate(50%, -50%)
-	width: 440px
 	&__image
 		display: block
 		margin: 0 auto
 		width: 300px
-	&__input
+
+.login,
+.default
+	+flex($d: column)
+	width: 440px
+	&__input,
+	&__select,
+	&__textarea,
+	&__file
 		background: $background
-		border: 1px solid $light
-		color: $muted
 		margin-bottom: 10px
 		padding: 12px
+	&__textarea
+		height: 7rem
+	&__file
+		position: relative
+		transition: 250ms
+		&:hover
+			box-shadow: $shadow-3
+			transform: scale(1.02)
+		&::after
+			+font($w: $font-3, $c: $white)
+			+position(0, 0)
+			+size(100%)
+			+flex(center, center)
+			background: $muted
+			box-shadow: $shadow-2
+			content: attr(data-placeholder)
+			cursor: pointer
+
+.search
+	+flex(space-between, center)
+	margin-bottom: 20px
+	&__select
+		padding: 8px
