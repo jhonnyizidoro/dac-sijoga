@@ -3,8 +3,6 @@
 <head>
 	<title>SIJOGA</title>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel='shortcut icon' href='/favicon.ico'>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
 	<link href="/css/app.css" rel="stylesheet">
@@ -30,7 +28,7 @@
 	<!-- SEARCH FORM -->
 	<form class="search">
 		<div class="search__left">
-			<select class="search__select" name="order" aria-label="Selecione uma ordenação">
+			<select class="search__select" name="order">
 				<option value="">TODOS OS PROCESSOS</option>
 				<option value="">PROCESSOS EM ABERTO</option>
 				<option value="">PROCESSOS ENCERRADOS</option>
@@ -41,11 +39,11 @@
 				<option value="">PROCESSOS GANHOS COMO PROMOVIDO</option>
 				<option value="">PROCESSOS PERDIDOS COMO PROMOVIDO</option>
 			</select>
-			<button class="button button--primary button--small" type="submit" aria-label="">FILTRAR</button>
+			<button class="button button--primary button--small" type="submit">FILTRAR</button>
 		</div>
 		<div class="search__right">
-			<button class="button button--gray button--small" type="button" aria-label="Cadastrar nova parte" data-target="part">CADASTRAR PARTE</button>
-			<button class="button button--gray button--small" type="button" aria-label="Novo processo" data-target="lawsuit">NOVO PROCESSO</button>
+			<button class="button button--gray button--small" type="button" data-target="part">CADASTRAR PARTE</button>
+			<button class="button button--gray button--small" type="button" data-target="lawsuit">NOVO PROCESSO</button>
 		</div>
 	</form>
 	<!-- SEARCH FORM END -->
@@ -83,7 +81,7 @@
 		<tr class="table__row">
 			<td class="table__cell">
 				<span class="table__text">#123456</span>
-				<span class="table__warning">!</span>
+				<span class="icon icon--warning"></span>
 			</td>
 			<td class="table__cell">
 				<span class="table__text">01/01/2000 08:00</span>
@@ -104,17 +102,17 @@
 
 <!-- REPORT MODAL -->
 <div class="modal" id="report">
-	<button class="modal__close" type="submit" aria-label="Fechar janela">FECHAR</button>
+	<span class="modal__close">FECHAR</span>
 	<div class="modal__content">
 		<form class="default">
-			<input class="default__input" type="text" name="starts_at" placeholder="DATA INICIAL" data-mask="00/00/0000" aria-label="Insira a data inicial" inputmode="numeric">
-			<input class="default__input" type="text" name="ends_at" placeholder="DATA FINAL" data-mask="00/00/0000" aria-label="Insira a data final" inputmode="numeric">
-			<select class="default__select" name="status" aria-label="Selecione o status">
+			<input class="default__input" type="text" name="starts_at" placeholder="DATA INICIAL" data-mask="00/00/0000">
+			<input class="default__input" type="text" name="ends_at" placeholder="DATA FINAL" data-mask="00/00/0000">
+			<select class="default__select" name="status">
 				<option value="">STATUS</option>
 				<option value="">EM ABERTO</option>
 				<option value="">ENCERRADO</option>
 			</select>
-			<button class="button button--primary" type="submit" aria-label="Clique para efetuar o login">GERAR RELATÓRIO</button>
+			<button class="button button--primary" type="submit">GERAR RELATÓRIO</button>
 		</form>
 	</div>
 </div>
@@ -122,12 +120,12 @@
 
 <!-- PART MODAL -->
 <div class="modal" id="part">
-	<button class="modal__close" type="submit" aria-label="Fechar janela">FECHAR</button>
+	<span class="modal__close">FECHAR</span>
 	<div class="modal__content">
 		<form class="default">
-			<input class="default__input" type="text" name="name" placeholder="NOME" aria-label="Insira o nome">
-			<input class="default__input" type="text" name="cpf" placeholder="CPF" data-mask="000.000.000-00" aria-label="Insira o CPF" inputmode="numeric">
-			<button class="button button--primary" type="submit" aria-label="Clique para efetuar o login">CADASTRAR PARTE</button>
+			<input class="default__input" type="text" name="name" placeholder="NOME">
+			<input class="default__input" type="text" name="cpf" placeholder="CPF" data-mask="000.000.000-00">
+			<button class="button button--primary" type="submit">CADASTRAR PARTE</button>
 		</form>
 	</div>
 </div>
@@ -135,16 +133,16 @@
 
 <!-- LAWSUIT MODAL -->
 <div class="modal" id="lawsuit">
-	<button class="modal__close" type="submit" aria-label="Fechar janela">FECHAR</button>
+	<span class="modal__close">FECHAR</span>
 	<div class="modal__content">
 		<form class="default">
-			<select class="default__select" name="client" aria-label="Selecione seu cliente">
+			<select class="default__select" name="client">
 				<option value="">SEU CLIENTE</option>
 			</select>
-			<select class="default__select" name="part" aria-label="Selecione o promovido">
+			<select class="default__select" name="part">
 				<option value="">PROMOVIDO</option>
 			</select>
-			<button class="button button--primary" type="submit" aria-label="Clique para efetuar o login">CADASTRAR PARTE</button>
+			<button class="button button--primary" type="submit">CADASTRAR PARTE</button>
 		</form>
 	</div>
 </div>

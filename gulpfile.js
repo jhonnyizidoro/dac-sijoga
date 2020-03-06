@@ -1,11 +1,13 @@
-const {task, watch, src, dest} = require('gulp'),
+const {task, watch, src, dest, series} = require('gulp'),
 	sass = require('gulp-sass'),
 	pump = require('pump'),
 	webserver = require('gulp-webserver')
 
 task(transpile = () => pump([
 	src('sass/app.sass'),
-	sass().on('error', sass.logError),
+	sass({
+		outputStyle: 'compressed',
+	}).on('error', sass.logError),
 	dest('css'),
 ]))
 
@@ -21,4 +23,4 @@ task(server = () => {
 	watch('sass/**/*', transpile)
 })
 
-exports.server = server
+exports.server = series(transpile, server)
