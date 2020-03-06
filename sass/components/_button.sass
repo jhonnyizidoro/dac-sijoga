@@ -1,0 +1,11 @@
+.button
+	border: 0
+	box-shadow: $shadow-2
+	transition: 250ms
+	&:hover
+		box-shadow: $shadow-3
+		transform: scale(1.02)
+	&--primary
+		+font($w: $font-3, $c: $white)
+		background: $primary
+		padding: 13px
